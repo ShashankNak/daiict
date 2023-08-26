@@ -10,7 +10,7 @@
             mysqli_query($con,$delete_sql);
         }
     }    
-    $res = mysqli_query($con, "select * from patient");
+    $res = mysqli_query($con, "select * from admin where role='1'");
     $count = mysqli_num_rows($res);
     if($count < 1)
     {
@@ -24,7 +24,7 @@
                   <div class="col-xl-12">
                      <div class="card">
                         <div class="card-body">
-                           <h4 class="box-title">Patient's List</h4>
+                           <h4 class="box-title">Doctor's List</h4>
                         </div>
                         <div class="card-body--">
                            <div class="table-stats order-table ov-h">
@@ -32,10 +32,7 @@
                                  <thead>
                                     <tr>
                                        <th class="serial">#</th>
-                                       <th>Adhaar No</th>
-                                       <th>Name</th>
                                        <th>Email</th>
-                                       <th>Details</th>
                                        <th>Created On</th>
                                        <th>Actions</th>
                                     </tr>
@@ -46,11 +43,8 @@
                                      while($row = mysqli_fetch_assoc($res)){ ?>
                                     <tr>
                                        <td class="serial"><?php echo($i); ?></td>
-                                       <td> <?php echo($row['aadhar_no']); ?> </td>
-                                       <td> <span class="name"><?php echo($row['name']); ?></span> </td>
                                        <td> <span class="product"><?php echo($row['email']); ?></span> </td>
-                                       <td><?php echo "<span class='product'><a href='details.php?id=".$row['id']."'>Details</a></span>"; ?></td>
-                                       <td><span class="product"><?php echo(getFormatDate($row['created_at'])); ?></span></td>
+                                       <td><span class="count"><?php echo(getFormatDate($row['created_at'])); ?></span></td>
                                        <td>
                                           <?php echo "<span class='btn btn-danger'><a style='color:#fff;' href='?type=delete&id=".$row['id']."'>Delete</a></span>"; ?>
                                        </td>

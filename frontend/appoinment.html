@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+    <div class="iconContainer">
+        <div class="div-flex">
+            <div class="subtitle"><h2>Recursive Challengers <h2></div>
+            <img class="image-home" src="health.png" alt="health">
+        </div>
+         
+         <div class="title">Health Management System</div>
+    </div>
+    <div class="navbar">
+        <ul>
+            <li id="item1" ><a href="home_page.html">Home</a></li>
+            <li id="item2" class="active"><a href="#">Appointment</a></li>
+            <li id="item3"><a href="#">Report</a></li>
+            <li id="item4"><a href="#">Speech</a></li>
+            <li id="item5"><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <div class="body-container">
+        <div class="container">
+            <h2 class="mb-4">Hospital Appointment Form</h2>
+            <form>
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+              </div>
+              <div class="form-group">
+                <label for="Age">Age</label>
+                <input type="number" class="form-control" id="Age" placeholder="Enter your Age" required>
+              </div>
+              <div class="form-group">
+                <label for="Aadhar">Aadhar</label>
+                <input type="tel" class="form-control" id="Age" placeholder="XXXX XXXX XXXX" required>
+              </div>
+              <div class="form-group">
+                <label for="Gender">Gender: </label>
+                <label>
+                    <input type="radio" name="gender" value="male" margin="left 20%">
+                    male
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="female">
+                    female
+                </label>
+              </div>
+              <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" class="form-control" id="date" required>
+              </div>
+              <div class="form-group">
+                <label for="department">Select Department</label>
+                <select class="form-control" id="department" required>
+                  <option value="" disabled selected>Select a department</option>
+                  <option value="cardiology">Cardiology</option>
+                  <option value="orthopedics">Orthopedics</option>
+                  <option value="neurology">Neurology</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Additional Information</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Enter any additional information"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+    </div>
+</body>
+</html>

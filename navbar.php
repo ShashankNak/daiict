@@ -35,6 +35,34 @@
                      <a href="patient_list.php" >Patient List</a>
                   </li>
                   <?php } ?>
+                  <?php {?>
+                  <li class="menu-item-has-children dropdown">
+                     <a href="notifications.php" >Notifications
+                        <?php 
+                        $query = "select details.* from details where details.status = '0'";
+                        $res = mysqli_query($con, $query);
+                        $count = mysqli_num_rows($res);
+                        if($count > 0)
+                        {
+                            ?>
+                            <span style="color:#fff;border-radius:15px;" class="position-absolute mx-2 top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    New
+  </span>
+                            <?php
+                        }
+                       ?>
+                     
+                     </a>
+                  </li>
+                  <?php } ?>
+                  <?php {?>
+                  <li class="menu-item-has-children dropdown">
+                     <a href="doctor_list.php" >Doctor List</a>
+                  </li>
+                  <?php } ?>
+                  <li class="menu-item-has-children dropdown">
+                     <a href="staff_list.php" >Staff List</a>
+                  </li>
                </ul>
             </div>
          </nav>
@@ -43,7 +71,7 @@
          <header id="header" class="header">
             <div class="top-left">
                <div class="navbar-header" style="display:flex;">
-                    <h3 style="font-size:20px;margin-top:10px;" class="text-center">Recursive Challengers</h3>
+                    <h3 style="font-size:20px;margin-top:10px;" class="text-center"><strong>Recursive Challengers</strong></h3>
                   <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                </div>
             </div>
