@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@600&family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --bg-gradient1:linear-gradient(90deg, #c8e5fa,#96d1ff,#49c9ff);
+    --bg-gradient2:linear-gradient(90deg, #86adeb,#5f81b9,#0e56c9);
+    --bg-gradient3:linear-gradient(90deg, #8A2387,#E94057,#F27121);
+}
+
+.iconContainer {
+    text-align: center;
+    background-image: var(--bg-gradient2);
+    padding: 50px;
+    justify-content: center;
+}
+
+.title {
+    font-size: 6vh;
+    margin-top: 6px;
+
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.div-flex{
+    display: flex;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitle {
+    font-size: 5vh;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.image-home{
+    margin-left: 2%;
+}
+
+/* Style the navigation bar */
+.navbar {
+    background-color: #000000;
+    overflow: hidden;
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul {
+    text-align: center;
+    overflow: hidden;
+    margin-left: 5%;
+}
+
+.navbar li{
+    float: left;
+    display: flex;
+    list-style-type: none;
+}
+
+
+.navbar li a:hover {
+    background-color: #8cc4ff;
+}
+
+.active{
+    background-color:  #007BFF;
+}
+
+.container {
+    background-color: #fff; /* Set background color if needed */
+  }
+  
+  .background-image {
+    background-image: url('https://img.freepik.com/free-photo/medical-banner-with-doctor-wearing-goggles_23-2149611193.jpg?w=996&t=st=1693045580~exp=1693046180~hmac=b6a4baab4900063597535b5ec1100d93f9e86a75ef7ce3a29dbc33d896357c38');
+    background-size: cover;
+    height: 70vh; /* Adjust the height as needed */
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cropped-image {
+    width: 100%; /* Adjust the width as needed */
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .cropped-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .text {
+    width: 55%; /* Adjust the width as needed */
+  }
+  
+  .additional-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10vh; /* Adjust spacing between sections */
+  }
+  .additional-image {
+    width: 40vh; /* Adjust the width as needed */
+    height: 40vh; /* Adjust the height as needed */
+    overflow: hidden;
+    border-radius: 50%; /* Make the image container circular */
+  }
+  
+  .additional-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the circular container */
+    border-radius: 50%; /* Make the image itself circular */
+  }
+  .additional-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    width: 90%; /* Adjust the width as needed */
+    
+  }
+  
