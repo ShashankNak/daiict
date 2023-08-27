@@ -35,6 +35,9 @@ require('navbar.php');
                                         <th>
                                             Gender
                                         </th>
+                                        <th>
+                                            Generate New Prescription
+                                        </th>
                                     </tr>
 								</thead>
 								<tbody>
@@ -54,6 +57,7 @@ require('navbar.php');
                                                 echo('Female');
                                             } ?></span>
                                         </td>
+                                        <td><?php echo "<span class='product'><a href='newQuery.php?id=".$row['id']."'>New Prescription</a></span>"; ?></td>
                                     </tr>
 								</tbody>
                 </table><hr>
