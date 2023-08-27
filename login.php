@@ -1,4 +1,8 @@
 <?php
+if(isset($_SESSION['USER_ID']))
+{
+   header('location:index.php');
+}
    require('connection.inc.php');
    $msg = '';
    if(isset($_POST['submit']))

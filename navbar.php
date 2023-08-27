@@ -54,6 +54,24 @@
                      
                      </a>
                   </li>
+                  <li class="menu-item-has-children dropdown">
+                     <a href="appointment.php" >Appointments
+                        <?php 
+                        $query = "select appointment.* from appointment where appointment.date > CURDATE();";
+                        $res = mysqli_query($con, $query);
+                        $count = mysqli_num_rows($res);
+                        if($count > 0)
+                        {
+                            ?>
+                            <span style="color:#fff;border-radius:15px;" class="position-absolute mx-2 top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    New
+  </span>
+                            <?php
+                        }
+                       ?>
+                     
+                     </a>
+                  </li>
                   <?php } ?>
                   <?php {?>
                   <li class="menu-item-has-children dropdown">

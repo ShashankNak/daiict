@@ -1,16 +1,9 @@
 <?php
     require('navbar.php');
     require('functions.inc.php');
-    $msg='';
-    if(isset($_GET['type']) && $_GET['type']!=''){
-        $type=mysqli_real_escape_string($con,$_GET['type']);
-        if($type=='delete'){
-            $id=mysqli_real_escape_string($con,$_GET['id']);
-            $delete_sql="delete from patient where id='$id'";
-            mysqli_query($con,$delete_sql);
-        }
-    }    
-    $res = mysqli_query($con, "select * from admin where role='1'");
+    $msg=''; 
+    $query = "select appointment.* from appointment where appointment.date > CURDATE();";
+    $res = mysqli_query($con, $query);
     $count = mysqli_num_rows($res);
     if($count < 1)
     {
@@ -24,7 +17,7 @@
                   <div class="col-xl-12">
                      <div class="card">
                         <div class="card-body">
-                           <h4 class="box-title">Doctor's List</h4>
+                           <h4 class="box-title">Appointments</h4>
                         </div>
                         <div class="card-body--">
                            <div class="table-stats order-table ov-h">
@@ -32,22 +25,27 @@
                                  <thead>
                                     <tr>
                                        <th class="serial">#</th>
-                                       <th>Email</th>
-                                       <th>Created On</th>
-                                       <th>Actions</th>
+                                       <th>Patient Id</th>
+                                       <th>Department</th>
+                                       <th>Date</th>
+                                       <th>Message</th>
                                     </tr>
                                  </thead>
                                  <tbody>
                                     
                                     <?php $i = 1;
-                                     while($row = mysqli_fetch_assoc($res)){ ?>
+                                     while($row = mysqli_fetch_assoc($res)){ 
+                                       $pid=$row['patient_id'];
+                                       $newq= "select * from patient where id='$pid'";
+                                       $newr=mysqli_query($con,$newq);
+                                       $newrr = mysqli_fetch_assoc($newr);
+                                     ?>
                                     <tr>
                                        <td class="serial"><?php echo($i); ?></td>
-                                       <td> <span class="product"><?php echo($row['email']); ?></span> </td>
-                                       <td><span class="count"><?php echo(getFormatDate($row['created_at'])); ?></span></td>
-                                       <td>
-                                          <?php echo "<span class='btn btn-danger'><a style='color:#fff;' href='?type=delete&id=".$row['id']."'>Delete</a></span>"; ?>
-                                       </td>
+                                       <td> <span class="product"><?php echo $newrr['name']; ?></span> </td>
+                                       <td><span class="product"><?php echo $row['dept']; ?></span></td>
+                                       <td><span class="product"><?php echo $row['date']; ?></span></td>
+                                       <td><span class="product"><?php echo $row['message']; ?></span></td>
                                     </tr>
                                     <?php $i++; }?>
                                     <?php if($count < 0){ ?>
